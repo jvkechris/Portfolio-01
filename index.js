@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const logo = document.querySelector('.logo');
     if (logo) {
         logo.onclick = function() {
-            window.location.href = "/";
+            window.location.href = "?page=da";
         };
     }
 });
@@ -137,3 +137,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }, 2000);
         });
+        const modelViewer = document.getElementById('model-viewer');
+    const preloader = document.getElementById('model-preloader');
+    
+    modelViewer.addEventListener('load', () => {
+        preloader.style.display = 'none';
+    });
