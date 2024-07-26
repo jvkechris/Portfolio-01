@@ -1,0 +1,360 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    transition: 0.2s;
+    font-family: "Archivo Black", sans-serif;
+    box-sizing: border-box;
+}
+
+*:focus {
+    border: none;
+    outline: none;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    height: 80px;
+    background: #010101;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 50px 0 50px;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    text-transform: uppercase !important;
+}
+
+nav .logo {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    display: none;
+    width: 2em;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    z-index: 10;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 9999px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease, opacity 0.5s ease;
+    opacity: 1; /* Initially hidden */
+}
+nav a.active {
+    background-color: #f1f2f6;
+    background-image: linear-gradient(
+315deg, #f1f2f6 0%, #c9c6c6 74%);
+    color: #000;
+}
+@media (max-width: 48em) {
+    nav a.active {
+    background: transparent;
+    color: #8d8d8d;
+}
+.logo {
+    display: block !important;
+}
+nav {
+    flex-direction: row;
+    align-items: center;
+}
+}
+
+
+nav ul li a:hover {
+    color: #8d8d8d;
+    border-radius: 9999px;
+}
+
+nav .menu-btn {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    nav {
+        padding: 0 30px 0 30px;
+    }
+}
+
+@media (max-width: 920px) {
+    nav .menu-btn {
+        display: block;
+    }
+
+    #click:checked ~ .menu-btn i:before {
+        content: "\f00d";
+    }
+
+    nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: #000;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    #click:checked ~ ul {
+        left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+   nav ul li a {
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 20px;
+        transition: margin-left 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 5s ease;
+        opacity: 0;
+    }
+
+    #click:checked ~ ul li a {
+        margin-left: 0px;
+        opacity: 1; /* Fade in the links */
+    }
+
+   
+}
+
+@media (max-width: 40em) {
+    nav ul li a {
+        padding: 1em 0;
+    }
+    footer {
+        position: relative;
+    }
+    .form-wrap {
+        padding: 1em;
+    }
+    form {
+        width: 100%;
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+}
+.current {
+    color: #8d8d8d;
+}
+/* Footer Styles */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 5%;
+    flex-direction: column;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer .copyright {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer .socials {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+footer .socials a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer .logo {
+    width: 2em;
+}
+
+/* Container Styles */
+.container {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hind', sans-serif;
+    background: rgb(0, 0, 0);
+    color: #f0f0f0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 4em 2em;
+    width: 48em;
+}
+
+@media (max-width: 48em) {
+    .container {
+        margin: 0 auto;
+        padding: 4em 2em;
+        width: auto !important;
+    }
+}
+
+/* Accordion Styles */
+.accordion .accordion-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion .accordion-item button[aria-expanded='true'] {
+    border-bottom: 1px solid #fff;
+}
+
+span.accordion-title {
+    text-transform: uppercase;
+}
+
+.accordion button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+    gap: 1em;
+}
+
+.accordion button:hover, .accordion button:focus {
+    cursor: pointer;
+    color: #dfdfdf;
+}
+
+.accordion button:hover::after, .accordion button:focus::after {
+    cursor: pointer;
+    color: #dfdfdf;
+    border: 1px solid #fff;
+}
+
+.accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+    padding-right: 1em;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 2em;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+}
+
+.accordion button .icon::before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+}
+
+.accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+}
+
+.accordion button[aria-expanded='true'] {
+    color: #fff;
+}
+
+.accordion button[aria-expanded='true'] .icon::after {
+    width: 0;
+}
+
+.accordion button[aria-expanded='true'] + .accordion-content {
+    opacity: 1;
+    max-height: 12em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+}
+
+.accordion .accordion-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+}
+
+/* Heading Styles */
+.hd {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Login Styles */
+.login {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
