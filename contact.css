@@ -329,7 +329,7 @@ form input {
 }
 textarea {
     height: 5em;
-    width: 90%;
+    width: 100%;
     padding: 1em 5%;
     background: #111;
     border: 1.3px solid #fff;
