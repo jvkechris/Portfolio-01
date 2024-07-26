@@ -309,3 +309,21 @@ footer {
     position: relative !important;
 }
 }
+nav .socials {
+    display: none;
+    gap: 1em;
+    margin-bottom: 1em;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+@media (max-width: 48em) {
+nav .socials {
+    display: flex !important;
+    gap: 1em;
+    margin-bottom: 1em;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
