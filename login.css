@@ -16,137 +16,123 @@ body, html {
   font-family: 'Roboto', sans-serif;
 }
 
-nav {
-    display: flex;
-    height: 80px;
-    background: #010101;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 0 50px 0 50px;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    text-transform: uppercase !important;
+  nav {
+            display: flex;
+            height: 80px;
+            background: #010101;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 0 50px;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            text-transform: uppercase !important;
+        }
+        nav .logo {
+            color: #fff;
+            font-size: 35px;
+            font-weight: 600;
+            display: none;
+            width: 2em;
+            position: relative;
+            left: .4em;
+        }
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            z-index: 10;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 5px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 9999px;
+            letter-spacing: 1px;
+             opacity: 0; /* Start with hidden links */
+  transform: translateX(-100%); /* Start off-screen */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition effects */
+        }
+        nav a.active {
+            background-color: #f1f2f6;
+            background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 74%);
+            color: #000;
+        }
+        @media (max-width: 48em) {
+            nav a.active {
+                background: transparent;
+                color: #8d8d8d;
+            }
+            .logo {
+                display: block !important;
+            }
+            nav {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+        nav ul li a:hover {
+            color: #8d8d8d;
+            border-radius: 9999px;
+        }
+        nav .menu-btn {
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            display: none;
+        }
+        input[type="checkbox"] {
+            display: none;
+        }
+        @media (max-width: 1000px) {
+            nav {
+                padding: 0 30px;
+            }
+        }
+        @media (max-width: 920px) {
+            nav .menu-btn {
+                display: block;
+            }
+            #click:checked ~ .menu-btn i:before {
+                content: "\f00d";
+            }
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: #000;
+                height: 100vh;
+                width: 100%;
+                text-align: center;
+                display: block;
+                transition: all 0.3s ease;
+            }
+            #click:checked ~ ul {
+                left: 0;
+            }
+            nav ul li {
+                width: 100%;
+                margin: 10px 0;
+            }
+            nav ul li a {
+                margin-left: -100%;
+                display: block;
+                font-size: 20px;
+                transition: margin-left 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            /* Effect applied when menu is open */
+#click:checked ~ ul li a {
+  opacity: 1; /* Make visible */
+  transform: translateX(0); /* Slide in */
+  margin: 0 !important;
 }
+        }
 
-nav .logo {
-    color: #fff;
-    font-size: 35px;
-    font-weight: 600;
-    display: none;
-    width: 2em;
-}
-
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    z-index: 10;
-}
-
-nav ul li {
-    margin: 0 5px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 8px 15px;
-    border-radius: 9999px;
-    letter-spacing: 1px;
-    transition: all 0.3s ease, opacity 0.5s ease;
-    opacity: 1; /* Initially hidden */
-}
-nav a.active {
-    background-color: #f1f2f6;
-    background-image: linear-gradient(
-315deg, #f1f2f6 0%, #c9c6c6 74%);
-    color: #000;
-}
-@media (max-width: 48em) {
-    nav a.active {
-    background: transparent;
-    color: #8d8d8d;
-}
-.logo {
-    display: block !important;
-}
-nav {
-    flex-direction: row;
-    align-items: center;
-}
-}
-
-
-nav ul li a:hover {
-    color: #8d8d8d;
-    border-radius: 9999px;
-}
-
-nav .menu-btn {
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-    display: none;
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-
-@media (max-width: 1000px) {
-    nav {
-        padding: 0 30px 0 30px;
-    }
-}
-
-@media (max-width: 920px) {
-    nav .menu-btn {
-        display: block;
-    }
-
-    #click:checked ~ .menu-btn i:before {
-        content: "\f00d";
-    }
-
-    nav ul {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        background: #000;
-        height: 100vh;
-        width: 100%;
-        text-align: center;
-        display: block;
-        transition: all 0.3s ease;
-    }
-
-    #click:checked ~ ul {
-        left: 0;
-    }
-
-    nav ul li {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-   nav ul li a {
-        width: 100%;
-        margin-left: -100%;
-        display: block;
-        font-size: 20px;
-        transition: margin-left 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 5s ease;
-        opacity: 0;
-    }
-
-    #click:checked ~ ul li a {
-        margin-left: 0px;
-        opacity: 1; /* Fade in the links */
-    }
-
-   
-}
 
 footer {
   display: flex;
