@@ -135,5 +135,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 spans.forEach(span => {
                     span.style.opacity = '1';
                 });
-            }, 3000);
+            }, 2000);
         });
