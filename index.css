@@ -301,9 +301,9 @@ footer {
   width: 2em;
 }
 model-viewer {
-    width: 100%; /* Make the model viewer full width */
-    height: 60vh; /* Maintain aspect ratio */
-    max-height: 500px; /* Set a maximum height for the model */
+    width: 100%;
+    height: 100vh;
+    max-height: 500px;
 }
 .image-container {
     width: 50% !important; /* Full width */
@@ -317,6 +317,7 @@ model-viewer {
     height: auto !important;
     gap: 1em;
     padding-top: 0 !important;
+    overflow: hidden;
 }
     .header h1 {
       font-size: 1.7em;
@@ -330,6 +331,12 @@ model-viewer {
     margin: 0;
     text-align: center;
     margin-bottom: 1em;
+}
+model-viewer {
+    width: 100%;
+    height: 100vh;
+    max-height: 500px;
+    transform: scale(1.3) !important;
 }
 .header img {
     width: 70%;
@@ -350,7 +357,7 @@ footer {
     width: 100%;
 }
 .image-container {
-  height: auto !important;
+  height: 40vh !important;
 }
 .image-container {
     width: 80% !important;
