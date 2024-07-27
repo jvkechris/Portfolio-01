@@ -17,7 +17,7 @@ body, html {
 }
 
 
-nav {
+  nav {
             display: flex;
             height: 80px;
             background: #010101;
@@ -55,9 +55,7 @@ nav {
             padding: 8px 15px;
             border-radius: 9999px;
             letter-spacing: 1px;
-             opacity: 0; /* Start with hidden links */
-  transform: translateX(-100%); /* Start off-screen */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition effects */
+             
         }
         nav a.active {
             background-color: #f1f2f6;
@@ -76,6 +74,11 @@ nav {
                 flex-direction: row;
                 align-items: center;
             }
+            nav ul li a {
+                opacity: 0; /* Start with hidden links */
+  transform: translateX(-100%); /* Start off-screen */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition effects */
+        }
         }
         nav ul li a:hover {
             color: #8d8d8d;
@@ -133,6 +136,7 @@ nav {
   margin: 0 !important;
 }
         }
+
 
 
 .location-details a {
