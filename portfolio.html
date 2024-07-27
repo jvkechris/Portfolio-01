@@ -95,41 +95,16 @@
         </section>
     </div>
 
-   <div class="slider">
-  <div class="slide-track">
-    <div class="slide">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Shopify_Logo.png/640px-Shopify_Logo.png" height="100" width="250" alt="" />
+   <div class="marquee-container" id="marquee">
+        <div class="marquee-content">
+            <span><img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Shopify_Logo.png"></span>
+            <span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Logo-2582748_1920.png/800px-Logo-2582748_1920.png" class="small"></span>
+            <span><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Wordpress_Blue_logo.png" class="small"></span>
+            <span><img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" class="small"></span>
+            <span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" class="small"></span>
+          <span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Firebase_icon.svg/768px-Firebase_icon.svg.png" class="small"></span>
+        </div>
     </div>
-    <div class="slide">
-      <img src="https://toppng.com/uploads/thumbnail/html5-js-css3-logo-png-11536003913vfpgdr1kae.png" height="100" width="250" alt="" />
-    </div>
-    <div class="slide">
-      <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/reactjs_logo_icon_170805.png" height="100" width="250" alt="" />
-    </div>
-    <div class="slide">
-      <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/tailwindcss_logo_icon_170649.png" height="100" width="250" alt="" />
-    </div>
-    <div class="slide">
-      <img src="https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png" height="100" width="250" alt="" />
-    </div>
-    <div class="slide">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Wordpress_Blue_logo.png" height="100" width="250" alt="" />
-    </div>
-    <div class="slide">
-      <img src="https://cdn.dribbble.com/users/528264/screenshots/3140440/firebase_logo_1x.png" height="100" width="250" alt="" />
-    </div>
-    <div class="slide">
-      <img src="https://iconape.com/wp-content/files/zp/349996/svg/bootstrap-seeklogo.com.svg" height="100" width="250" alt="" />
-    </div>
-    <div class="slide">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Jquery-mobile-logo.png" height="100" width="250" alt="" />
-    </div>
-    <div class="slide">
-      <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/wix_logo_icon_168759.png" height="100" width="250" alt="" />
-    </div>
-    
-  </div>
-</div>
     
     <footer>
         <div class="socials">
@@ -156,6 +131,48 @@
                 };
             });
         });
+
+                    const marquee = document.getElementById('marquee');
+const marqueeContent = marquee.querySelector('.marquee-content');
+let isDragging = false;
+let startX;
+let scrollDirection = 'left'; // 'left' for left-to-right, 'right' for right-to-left
+
+// Start dragging
+marquee.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    marquee.style.cursor = 'grabbing';
+});
+
+// Stop dragging
+window.addEventListener('mouseup', () => {
+    if (isDragging) {
+        isDragging = false;
+        marquee.style.cursor = 'grab';
+        // Restart the animation in the current direction
+        marqueeContent.style.animation = `marquee-${scrollDirection} 10s linear infinite`;
+    }
+});
+
+// Handle dragging
+marquee.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+        const currentX = e.clientX;
+        if (currentX > startX) {
+            if (scrollDirection !== 'right') {
+                scrollDirection = 'right';
+                marqueeContent.style.animation = `marquee-right 10s linear infinite`;
+            }
+        } else if (currentX < startX) {
+            if (scrollDirection !== 'left') {
+                scrollDirection = 'left';
+                marqueeContent.style.animation = `marquee-left 10s linear infinite`;
+            }
+        }
+    }
+});
+
     </script>
     <script src="/portfolio.js"></script>
 </body>
