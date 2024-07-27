@@ -48,7 +48,7 @@ h2 {
     font-size: 1em !important;
 }
 
-  nav {
+   nav {
             display: flex;
             height: 80px;
             background: #010101;
@@ -86,9 +86,7 @@ h2 {
             padding: 8px 15px;
             border-radius: 9999px;
             letter-spacing: 1px;
-             opacity: 0; /* Start with hidden links */
-  transform: translateX(-100%); /* Start off-screen */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition effects */
+             
         }
         nav a.active {
             background-color: #f1f2f6;
@@ -107,6 +105,11 @@ h2 {
                 flex-direction: row;
                 align-items: center;
             }
+            nav ul li a {
+                opacity: 0; /* Start with hidden links */
+  transform: translateX(-100%); /* Start off-screen */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition effects */
+        }
         }
         nav ul li a:hover {
             color: #8d8d8d;
