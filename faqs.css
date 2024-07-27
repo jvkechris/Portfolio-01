@@ -82,6 +82,7 @@ body, html {
   transform: translateX(-100%); /* Start off-screen */
   transition: opacity 0.5s ease, transform 0.5s ease; /* Transition effects */
         }
+        }
         nav ul li a:hover {
             color: #8d8d8d;
             border-radius: 9999px;
