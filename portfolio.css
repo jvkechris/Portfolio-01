@@ -301,6 +301,7 @@ footer {
 }
 
 
+
 .marquee-container {
     width: 100%;
     overflow: hidden;
@@ -314,20 +315,24 @@ footer {
     white-space: nowrap;
     animation: marquee-left 10s linear infinite;
     will-change: transform;
-  align-items: center
+    align-items: center;
 }
 
 .marquee-content span {
     display: inline-block;
     padding: 0 2rem;
     font-size: 1.5rem;
-    color: #333; /* Optional: Customize the text color */
+    color: #fff; /* Optional: Customize the text color */
 }
-span img {
-  width: 250px;
+
+.marquee-content img {
+    width: 250px;
+    height: auto; /* Ensure the images are responsive */
 }
-span .small {
-  width: 3em;
+
+.marquee-content .small {
+    width: 3em;
+    height: auto; /* Ensure the images are responsive */
 }
 
 @keyframes marquee-left {
@@ -346,6 +351,25 @@ span .small {
     100% {
         transform: translateX(100%);
     }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .marquee-content span {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+         /* Adjust padding for smaller screens */
+    }
+
+    .marquee-content img {
+        width: 250px; /* Adjust image size for smaller screens */
+    }
+
+    .marquee-content .small {
+        width: 3em; /* Adjust small image size for smaller screens */
+    }
+  .marquee-content {
+   width: 170%; 
+  }
 }
 
 
