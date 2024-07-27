@@ -305,7 +305,7 @@ footer {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: #f0f0f0; /* Optional: for better visibility */
+    background-color: #000; /* Optional: for better visibility */
     cursor: grab;
 }
 
