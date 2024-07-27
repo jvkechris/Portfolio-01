@@ -388,6 +388,10 @@ nav .socials {
     justify-content: center;
     gap: 1em;
 }
+.active:hover {
+    color: #000;
+    transform: scale(0.9);
+}
 
 @media (max-width: 48em) {
 nav .socials {
